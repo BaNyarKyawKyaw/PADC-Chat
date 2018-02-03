@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">PADC-Chat</string>
     <string name="action_settings">Settings</string>
+
+    <string name="msg_generic_no_data">No Data to Display</string>
+    <string name="user_name">Kaung Khat Thu</string>
+    <string name="sample_conversation">Hi, How are you?</string>
+    <string name="text_input_hint">Write message here...</string>
 </resources>
