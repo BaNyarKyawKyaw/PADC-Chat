@@ -16,11 +16,11 @@ import java.util.List;
 public abstract class BaseRecyclerAdapter<T extends BaseViewHolder, W> extends RecyclerView.Adapter<T> {
 
     protected List<W> mData;
-    protected LayoutInflater mLayoutInflator;
+    protected LayoutInflater mLayoutInflater;
 
     public BaseRecyclerAdapter(Context context) {
         mData = new ArrayList<>();
-        mLayoutInflator = LayoutInflater.from(context);
+        mLayoutInflater = LayoutInflater.from(context);
     }
 
     @Override

@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.bnkk.padcchat.R;
+import com.bnkk.padcchat.data.vos.UserVO;
 import com.bnkk.padcchat.delegates.ChatItemDelegate;
 import com.bnkk.padcchat.viewholders.ChatsViewHolder;
 
@@ -14,29 +15,18 @@ import com.bnkk.padcchat.viewholders.ChatsViewHolder;
  * Created by E5-575G on 2/3/2018.
  */
 
-public class ChatsAdapter extends RecyclerView.Adapter<ChatsViewHolder> {
+public class ChatsAdapter extends BaseRecyclerAdapter<ChatsViewHolder, UserVO> {
 
-    private LayoutInflater mLayoutInflater;
     private ChatItemDelegate mDelegete;
 
     public ChatsAdapter(Context context, ChatItemDelegate chatItemDelegate) {
-        mLayoutInflater = LayoutInflater.from(context);
+        super(context);
         mDelegete = chatItemDelegate;
     }
 
     @Override
     public ChatsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View chatView = mLayoutInflater.inflate(R.layout.view_item_chat, parent, false);
-        return new ChatsViewHolder(chatView,mDelegete);
-    }
-
-    @Override
-    public void onBindViewHolder(ChatsViewHolder holder, int position) {
-
-    }
-
-    @Override
-    public int getItemCount() {
-        return 10;
+        return new ChatsViewHolder(chatView, mDelegete);
     }
 }
