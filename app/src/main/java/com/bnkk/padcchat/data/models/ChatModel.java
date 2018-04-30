@@ -1,11 +1,9 @@
 package com.bnkk.padcchat.data.models;
 
-import android.content.Context;
 import android.util.Log;
 
 import com.bnkk.padcchat.ChatApp;
 import com.bnkk.padcchat.data.vos.ChatVO;
-import com.bnkk.padcchat.data.vos.ConversationVO;
 import com.bnkk.padcchat.data.vos.UserVO;
 import com.bnkk.padcchat.events.FirebaseEvents;
 import com.google.firebase.auth.FirebaseAuth;
@@ -32,11 +30,18 @@ public class ChatModel {
     private static final String CHATS = "chats";
     private static final String REGISTERED_USER = "registeredUsers";
 
+    private FirebaseAuth mFirebaseAuth;
+    private FirebaseUser mFirebaseUser;
+
     private List<UserVO> registeredUserList;
     private List<ChatVO> chatList;
 
     private ChatModel() {
         registeredUserList = new ArrayList<>();
+        chatList = new ArrayList<>();
+
+        mFirebaseAuth = FirebaseAuth.getInstance();
+        mFirebaseUser = mFirebaseAuth.getCurrentUser();
     }
 
     public static ChatModel getObjInstance() {
@@ -93,5 +98,9 @@ public class ChatModel {
 
     public List<UserVO> getRegisteredUserList() {
         return registeredUserList;
+    }
+
+    public boolean isUserAuthenticate() {
+        return mFirebaseUser != null;
     }
 }
