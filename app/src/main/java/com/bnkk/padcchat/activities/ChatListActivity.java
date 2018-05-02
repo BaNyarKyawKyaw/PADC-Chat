@@ -65,7 +65,7 @@ public class ChatListActivity extends BaseActivity
         rvChatList.setAdapter(mChatsAdapter);
 
         GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken("") //TODO to add the request Token form Firebase
+                .requestIdToken("AIzaSyDf2QoAO8W8pt0OQil_RLt7AsE1IPPkTws") //TODO to add the request Token form Firebase
                 .requestEmail()
                 .build();
 
